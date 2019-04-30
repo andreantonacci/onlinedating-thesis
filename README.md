@@ -1,6 +1,6 @@
-# An Empirical Investigation on Online Dating as a Marketplace
+# An Empirical Investigation of Online Dating as a Marketplace
 
-This is my bachelor's thesis LaTeX project from 2018.
+This is my bachelor's thesis LaTeX project from 2018. A compiled version can be found too.
 
 ## Abstract
 
