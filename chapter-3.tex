@@ -1,0 +1,300 @@
+
+\lhead[\leftmark]{\leftmark}
+
+\rhead[\leftmark]{}
+
+\lfoot{}
+
+\rfoot{}
+
+\cfoot[\thepage]{\thepage}
+
+\chapter{Results}
+
+\section{Descriptive Statistics}
+
+We observe that females in our sample are 51.5\% and that the average
+age is 46.7. Both \textsc{age} and \textsc{polview} seem normally
+distributed \textendash{} the absolute value of skewness and kurtosis
+are < 1 and few outliers have been observed \textendash{} while \textsc{internetfreq}
+seems left-skewed (see Figures \ref{fig:age:-histogram.}, \ref{fig:polview-histogram},
+\ref{fig:internetfreq-histogram} and \prettyref{tab:Descriptive-Statistics-forNumerical}):
+it has a mean of 3.76 but skewness is slightly problematic (-1.087).
+We encountered the same kind of problem with other variables. However,
+due to the very large sample size, we considered that the Central
+Limit Theorem could be applied and therefore we refused to drop these
+important variables. 
+
+No significant issues emerged from a Missing Value Analysis (see \prettyref{tab:Missing-Value-Analysis-Independ}),
+with few notable exceptions\textsc{: internetfreq (}14.1\% of missing
+values\textsc{), physicallabour (}41.4\%\textsc{), polview (}9.6\%\textsc{)}
+and\textsc{ married (}19.2\%\textsc{). }
+\begin{table}[h]
+\centering{}%
+\begin{minipage}[t]{1\columnwidth}%
+\begin{center}
+\renewcommand{\arraystretch}{1.5}%
+\begin{tabular}{lccccccc}
+\hline 
+ &  &  & \textbf{Std. } & \multicolumn{2}{c}{\textbf{Missing}} & \multicolumn{2}{c}{\textbf{N. of Ext.}\footnote{Number of extreme cases outside the range (Q1 - 1.5{*}IQR, Q3 + 1.5{*}IQR). }\textbf{}\footnote{. indicates that the inter-quartile range (IQR) is zero.}}\tabularnewline
+ & \textbf{N} & \textbf{Mean} & \textbf{Deviation} & \textbf{Count} & \textbf{Percent} & \textbf{Low} & \textbf{High}\tabularnewline
+\hline 
+\hline 
+\textsc{age} & 5318 & 46.2232 & 17.84838 & 100 & 1.8 & 0 & 0\tabularnewline
+\textsc{gender} & 5418 & .5172 & .49975 & 0 & .0 & 0 & 0\tabularnewline
+\textsc{university} & 5383 & .2631 & .44033 & 35 & .6 & 0 & 0\tabularnewline
+\textsc{minrace} & 5291 & .2657 & .44177 & 127 & 2.3 & . & .\tabularnewline
+\textsc{income1} & 5418 & .3073 & .46142 & 0 & .0 & 0 & 0\tabularnewline
+\textsc{income2} & 5418 & .2999 & .45827 & 0 & .0 & 0 & 0\tabularnewline
+\textsc{income3} & 5418 & .2527 & .43459 & 0 & .0 & 0 & 0\tabularnewline
+\textsc{married} & 4378 & .6942 & .46082 & 1040 & 19.2 & 0 & 0\tabularnewline
+\textsc{isparent} & 5365 & .2939 & .45561 & 53 & 1.0 & . & .\tabularnewline
+\textsc{polview} & 4897 & 2.9579 & 1.05925 & 521 & 9.6 & 0 & 0\tabularnewline
+\textsc{urban} & 5418 & .8319 & .37403 & 0 & .0 & . & .\tabularnewline
+\textsc{physicallabour} & 3173 & .4901 & .49998 & 2245 & 41.4 & 0 & 0\tabularnewline
+\textsc{disability} & 5399 & .1721 & .37748 & 19 & .4 & . & .\tabularnewline
+\textsc{internetfreq} & 4652 & 3.7623 & 1.13325 & 766 & 14.1 & 136 & 0\tabularnewline
+\textsc{attitude1} & 5094 & .6307 & .48265 & 324 & 6.0 & 0 & 0\tabularnewline
+\textsc{attitude2} & 4985 & .5047 & .50003 & 433 & 8.0 & 0 & 0\tabularnewline
+\hline 
+\end{tabular}\medskip{}
+\par\end{center}
+\begin{center}
+\caption{Missing Value Analysis.\label{tab:Missing-Value-Analysis-Independ}}
+\par\end{center}%
+\end{minipage}
+\end{table}
+However, these high percentages could be explained by the fact that
+these questions have not been asked to all respondents. In fact, \textsc{internetfreq}
+has been asked only if the respondent had previously admitted to use
+the Internet or own a cell phone; similarly, \textsc{physicallabour}
+has been asked only to currently employed people (leaving out not
+only the elderly, but also students or recent graduates). On the other
+hand, questions on sensitive matters, like political orientation,
+usually entail a higher than average percentage of missing values.
+\textsc{married}, instead, has been recoded to take value 1 (\textquotedblleft Yes\textquotedblright )
+only if the respondent is currently married or living with a partner,
+and 0 (\textquotedblleft No\textquotedblright ) if he or she has never
+been married before, thus leaving out all divorced, separated and
+widowed. Although the adequate percentage of missing values ranges
+from 5\% to 8\% at most, we decided to keep these variables due to
+their considerable high number of observations and their crucial importance
+in our model.
+
+\prettyref{tab:Correlation-matrix} displays the bivariate (linear)
+correlations between all pairs of variables selected in our model.
+This reveals some interesting and statistically significant links
+among the variables, that to a certain extent seem to confirm our
+\textsl{hypothesis 2}. For instance, we notice that online dating
+is positively correlated with being male, young, highly educated,
+with liberal views, single and with no children. Interestingly enough,
+some insights on U.S. (and sometimes worldwide) common social issues
+emerge as well. \clearpage{}\pagestyle{plain}
+\begin{sidewaystable}
+\centering{}%
+\begin{minipage}[t]{1\columnwidth}%
+\begin{center}
+\renewcommand{\arraystretch}{0.8}%
+\begin{tabular}{|l|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{c}{\textsc{\scriptsize{}ison.dat.}} & \multicolumn{1}{c}{\textsc{\scriptsize{}gen.}} & \multicolumn{1}{c}{\textsc{\scriptsize{}age}} & \multicolumn{1}{c}{\textsc{\scriptsize{}uni}} & \multicolumn{1}{c}{\textsc{\scriptsize{}m.race}} & \multicolumn{1}{c}{\textsc{\scriptsize{}inc.1}} & \multicolumn{1}{c}{\textsc{\scriptsize{}inc.2}} & \multicolumn{1}{c}{\textsc{\scriptsize{}inc.3}} & \multicolumn{1}{c}{\textsc{\scriptsize{}marr.}} & \multicolumn{1}{c}{\textsc{\scriptsize{}ispar.}} & \multicolumn{1}{c}{\textsc{\scriptsize{}polview}} & \multicolumn{1}{c}{\textsc{\scriptsize{}urb.}} & \multicolumn{1}{c}{\textsc{\scriptsize{}phy.lab.}} & \multicolumn{1}{c}{\textsc{\scriptsize{}disa.}} & \multicolumn{1}{c}{\textsc{\scriptsize{}int.freq}} & \multicolumn{1}{c}{\textsc{\scriptsize{}att.1}} & \multicolumn{1}{c}{\textsc{\scriptsize{}att.2}}\tabularnewline
+\hline 
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}ison.dat.}} & {\tiny{}Pearson C.} & {\tiny{}1} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}gen.}} & {\tiny{}Pearson C.} & {\tiny{}-.048{*}{*}} & {\tiny{}1} &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}age}} & {\tiny{}Pearson C.} & {\tiny{}-.211{*}{*}} & {\tiny{}.045{*}{*}} & {\tiny{}1} &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.000} &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}uni}} & {\tiny{}Pearson C.} & {\tiny{}.056{*}{*}} & {\tiny{}.013} & {\tiny{}.044{*}{*}} & {\tiny{}1} &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.311} & {\tiny{}.001} &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}m.race}} & {\tiny{}Pearson C.} & {\tiny{}-.018} & {\tiny{}-.011} & {\tiny{}-.143{*}{*}} & {\tiny{}-.048{*}{*}} & {\tiny{}1} &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.167} & {\tiny{}.372} & {\tiny{}.000} & {\tiny{}.000} &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}inc.1}} & {\tiny{}Pearson C.} & {\tiny{}.000} & {\tiny{}.046{*}{*}} & {\tiny{}-.002} & {\tiny{}-.253{*}{*}} & {\tiny{}.129{*}{*}} & {\tiny{}1} &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.991} & {\tiny{}.000} & {\tiny{}.880} & {\tiny{}.000} & {\tiny{}.000} &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}inc.2}} & {\tiny{}Pearson C.} & {\tiny{}.045{*}{*}} & {\tiny{}-.019} & {\tiny{}-.032{*}} & {\tiny{}-.005} & {\tiny{}-.023} & {\tiny{}-.429} & {\tiny{}1} &  &  &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.137} & {\tiny{}.012} & {\tiny{}.704} & {\tiny{}.074} & {\tiny{}.000} &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}inc.3}} & {\tiny{}Pearson C.} & {\tiny{}.023} & {\tiny{}-.057{*}{*}} & {\tiny{}-.052{*}{*}} & {\tiny{}.301{*}{*}} & {\tiny{}-.075{*}{*}} & {\tiny{}-.388{*}{*}} & {\tiny{}-.386{*}{*}} & {\tiny{}1} &  &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.067} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}marr.}} & {\tiny{}Pearson C.} & {\tiny{}-.282{*}{*}} & {\tiny{}.038{*}{*}} & {\tiny{}.478{*}{*}} & {\tiny{}.126{*}{*}} & {\tiny{}-.145{*}{*}} & {\tiny{}-.177{*}{*}} & {\tiny{}.038{*}{*}} & {\tiny{}-.386{*}{*}} & {\tiny{}1} &  &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.008} & {\tiny{}.000} &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}ispar.}} & {\tiny{}Pearson C.} & {\tiny{}-.047{*}{*}} & {\tiny{}.046{*}{*}} & {\tiny{}-.263{*}{*}} & {\tiny{}.020} & {\tiny{}.056{*}{*}} & {\tiny{}-.006} & {\tiny{}.000} & {\tiny{}.090{*}{*}} & {\tiny{}.249{*}{*}} & {\tiny{}1} &  &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.119} & {\tiny{}.000} & {\tiny{}.637} & {\tiny{}.983} & {\tiny{}.000} & {\tiny{}.000} &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}polview}} & {\tiny{}Pearson C.} & {\tiny{}.103{*}{*}} & {\tiny{}.049{*}{*}} & {\tiny{}-.145{*}{*}} & {\tiny{}.096{*}{*}} & {\tiny{}.084{*}{*}} & {\tiny{}.033{*}} & {\tiny{}-.009} & {\tiny{}.025} & {\tiny{}-.126{*}{*}} & {\tiny{}-.010} & {\tiny{}1} &  &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.014} & {\tiny{}.499} & {\tiny{}.058} & {\tiny{}.000} & {\tiny{}.435} &  &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}urb.}} & {\tiny{}Pearson C.} & {\tiny{}.047{*}{*}} & {\tiny{}.018} & {\tiny{}-.117{*}{*}} & {\tiny{}.101{*}{*}} & {\tiny{}.109{*}{*}} & {\tiny{}-.045{*}{*}} & {\tiny{}-.041{*}{*}} & {\tiny{}-.078{*}{*}} & {\tiny{}-.109{*}{*}} & {\tiny{}-.049{*}{*}} & {\tiny{}.091{*}{*}} & {\tiny{}1} &  &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.147} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.001} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} &  &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}phy.lab.}} & {\tiny{}Pearson C.} & {\tiny{}-.041{*}} & {\tiny{}-.107{*}{*}} & {\tiny{}-.123{*}{*}} & {\tiny{}-.453{*}{*}} & {\tiny{}.098{*}{*}} & {\tiny{}.222{*}{*}} & {\tiny{}.070{*}{*}} & {\tiny{}-.260{*}{*}} & {\tiny{}-.134{*}{*}} & {\tiny{}.021} & {\tiny{}-.004} & {\tiny{}-.080{*}{*}} & {\tiny{}1} &  &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.012} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.208} & {\tiny{}.830} & {\tiny{}.000} &  &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}disa.}} & {\tiny{}Pearson C.} & {\tiny{}-.015} & {\tiny{}.046{*}{*}} & {\tiny{}.226{*}{*}} & {\tiny{}-.157{*}{*}} & {\tiny{}.011} & {\tiny{}.250{*}{*}} & {\tiny{}-.077{*}{*}} & {\tiny{}-.184{*}{*}} & {\tiny{}.017} & {\tiny{}-.120{*}{*}} & {\tiny{}-.022} & {\tiny{}-.043{*}{*}} & {\tiny{}.016} & {\tiny{}1} &  &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.231} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.390} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.228} & {\tiny{}.000} & {\tiny{}.100} & {\tiny{}.001} & {\tiny{}.334} &  &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}int.freq}} & {\tiny{}Pearson C.} & {\tiny{}.152{*}{*}} & {\tiny{}-.012} & {\tiny{}-.344{*}{*}} & {\tiny{}.162{*}{*}} & {\tiny{}.013} & {\tiny{}-.195{*}{*}} & {\tiny{}.017} & {\tiny{}.178{*}{*}} & {\tiny{}-.077{*}{*}} & {\tiny{}.101{*}{*}} & {\tiny{}.111{*}{*}} & {\tiny{}.105{*}{*}} & {\tiny{}-.243{*}{*}} & {\tiny{}-.174{*}{*}} & {\tiny{}1} &  & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.360} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.351} & {\tiny{}.000} & {\tiny{}.220} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} &  &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}att.1}} & {\tiny{}Pearson C.} & {\tiny{}.167{*}{*}} & {\tiny{}-.096{*}{*}} & {\tiny{}-.161{*}{*}} & {\tiny{}.074{*}{*}} & {\tiny{}-.079{*}{*}} & {\tiny{}-.091{*}{*}} & {\tiny{}.031{*}} & {\tiny{}.112{*}{*}} & {\tiny{}-.097{*}{*}} & {\tiny{}-.015} & {\tiny{}.054{*}{*}} & {\tiny{}.021} & {\tiny{}-.084{*}{*}} & {\tiny{}-.051{*}{*}} & {\tiny{}.156{*}{*}} & {\tiny{}1} & \tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.019} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.243} & {\tiny{}.000} & {\tiny{}.109} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} &  & \tabularnewline
+\hline 
+\multirow{2}{*}{\textsc{\scriptsize{}att.2}} & {\tiny{}Pearson C.} & {\tiny{}.113{*}{*}} & {\tiny{}-.062{*}{*}} & {\tiny{}-.062{*}{*}} & {\tiny{}.062{*}{*}} & {\tiny{}-.071{*}{*}} & {\tiny{}-.036{*}{*}} & {\tiny{}-.008} & {\tiny{}.067{*}{*}} & {\tiny{}-.030{*}} & {\tiny{}-.021} & {\tiny{}.018} & {\tiny{}.019} & {\tiny{}-.131{*}{*}} & {\tiny{}.024} & {\tiny{}.110{*}{*}} & {\tiny{}.400{*}{*}} & {\tiny{}1}\tabularnewline
+\cline{2-19} 
+ & {\tiny{}Sig.} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.000} & {\tiny{}.007} & {\tiny{}.550} & {\tiny{}.000} & {\tiny{}.041} & {\tiny{}.113} & {\tiny{}.201} & {\tiny{}.145} & {\tiny{}.000} & {\tiny{}.067} & {\tiny{}.000} & {\tiny{}.000} & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+\begin{center}
+\caption{Bivariate correlation matrix.\label{tab:Correlation-matrix}}
+\blfootnote{{**Correlation is significant at 0.01 level (2-tailed).}}\blfootnote{{*Correlation is significant at 0.05 level (2-tailed).}}
+\par\end{center}%
+\end{minipage}
+\end{sidewaystable}
+\clearpage{}\pagestyle{fancy}
+
+Namely, the gender pay gap seems noticeable, by observing the correlations
+between \textsc{gender} and different income levels. There is also
+a significant linear relationship between being in a racial minority
+and earning less and marrying less often. Finally, we note not only
+that \textsc{internetfreq} is positively correlated with \textsc{isonlinedater},
+but also that it averagely follows its same pattern of correlations
+with other variables (i.e., it has a positive relation with being
+male, young, richer, etc.). By contrast, the thin market \textsl{hypothesis
+1} finds very little support \textendash{} if any \textendash{} from
+this bivariate analysis since, for instance, living in a urban area
+is positively correlated with \textsc{isonlinedater}, and having a
+disability is negatively correlated with the frequency of Internet
+usage. However, more meaningful and precise results on actual dependency
+links are addressed with the following multiple regression models.
+
+
+\section{Multivariate Analysis}
+
+\prettyref{tab:MRM-benchmark} displays all the resulting models from
+the multiple regressions that we have conducted. F test is significant
+at 1\% in all models (see \prettyref{tab:ANOVA-table}). Unless otherwise
+noted, all variables are statistically significant at the 0.01 level
+as well, and no particular issues of multicollinearity have been detected
+\textendash{} VIF scores never higher than $\simeq1.8$.
+
+The first basic model only included six controlling variables. Each
+coefficient brought significant results ($P-value<0.01$), except
+for \textsc{income2} ($P-value<0.05$) and \textsc{income3} (which
+becomes however significant in other models). The overall model accounted
+for approximately 5.5\% of the variance of online dating usage ($R^{2}=.055$).
+Moreover, all the variables\textquoteright{} coefficients seem consistent
+with the theoretical framework built for \textsl{hypothesis 2} (except
+for \textsc{income3}): thus it seems that being male, younger, with
+a university degree, White and in the upper social classes, predicts
+higher chances of being an online dater. In order to boost the explanatory
+power of the model, we included some more variables.
+
+Model 2, taking into consideration some attributes of the life course,
+provides a considerable higher explanatory power ($Adjusted\;R^{2}=0.111$).
+As expected, we find that one standard deviation decrease in \textsc{married}
+has the strongest effect (23.7\% in Model 2 and 25.9\% in Model 5)
+on our dependent variable compared to one standard deviation variation
+in any other covariate. A third and a fourth more robust models are
+subsequently developed, adding regressors on political views, disability
+and then Internet attitudes. Model 4 reaches an $R^{2}$ of .123 thanks
+to the contribution of the Internet factors, that are all statistically
+significant at 1\% and with a positive sign. The latter model seems
+to us the most useful and easily interpretable one. In fact, in Model
+5, \textsc{physicallabour} has also been added, and although it further
+increased $R^{2}$ (.126), we find more covariates to be statically
+not significant at all (e.g., \textsc{age} or \textsc{isparent}) and
+generally more counterintuitive results.
+
+In pursuit of more powerful predictions, we also built a sixth model
+(not shown in Table \ref{tab:MRM-benchmark}) with some interaction
+terms: \textsc{genderxuniversity} and \textsc{genderxminrace}. However,
+despite the higher $R^{2}$ (.137), it failed at providing just as
+many significant beta coefficients, thus we dismissed it. To clarify,
+we value more those lower R-square models with higher P-values rather
+than vice versa. If the only goal of the model was to make an accurate
+prediction, this would be a flawed idea. Yet this is not the case,
+since we are more interested in assessing whether a (perhaps small)
+reliable relationship truly exists among the considered variables.
+Even though the model does not explain much of the variation of the
+data, it still is significant. Moreover, it is quite common to find
+this kind of R-square percentages in social science research. Outcomes
+could be dictated by many other latent factors at play that may affect
+other facets of the model \textendash{} especially if the data deal
+with human behaviour, attitudes, thoughts, preferences and feelings,
+which are often object of measurement errors.
+
+One final remark on the model H\textsubscript{1} that has been designed
+to test the thin market hypothesis. It is overall significant and
+no issues have been detected as in the previous models. The three
+key variables chosen to test the hypothesis \textendash{} \textsc{minrace},
+\textsc{disability} and \textsc{urban} \textendash{} are all significant
+at 0.01 level. Some valuable insights emerged and they are extensively
+addressed in the following section.
+
+\begin{table}[h]
+\centering{}%
+\begin{minipage}[t]{1\columnwidth}%
+\begin{center}
+\renewcommand{\arraystretch}{2}%
+\begin{tabular}{lcccccc}
+\hline 
+ & {\small{}Model }\textbf{\small{}1} & {\small{}Model }\textbf{\small{}2} & {\small{}Model }\textbf{\small{}3} & {\small{}Model }\textbf{\small{}4} & {\small{}Model }\textbf{\small{}5} & {\small{}Model}\textbf{\small{} H}\textsubscript{\textbf{\small{}1}}\tabularnewline
+\hline 
+\hline 
+\textsc{gender (}\textsl{female}\textsc{)} & -.038{*}{*} & -.048{*}{*} & -.044{*}{*} & -.047{*}{*} & -.063{*}{*} & -.041{*}{*}\tabularnewline
+\textsc{age} & -.221{*}{*} & -.131{*}{*} & -.121{*}{*} & -.032 & .001 & -.229{*}{*}\tabularnewline
+\textsc{university} & .064{*}{*} & .078{*}{*} & .063{*}{*} & .046{*}{*} & .047{*} & .068{*}{*}\tabularnewline
+\textsc{minrace} & -.045{*}{*} & -.051{*}{*} & -.051{*}{*} & -.048{*}{*} & -.060{*}{*} & -.050{*}{*}\tabularnewline
+\textsc{income2 v. income1} & .031{*} & .076{*}{*} & .082{*}{*} & .062{*}{*} & .060{*}{*} & \tabularnewline
+\textsc{income3 v. income1} & -.006 & .052{*}{*} & .056{*}{*} & .035 & .060{*} & \tabularnewline
+\textsc{married} &  & -.237{*}{*} & -.239{*}{*} & -.259{*}{*} & -.243{*}{*} & \tabularnewline
+\textsc{isparent} &  & -.052{*}{*} & -.045{*}{*} & -.025 & -.069{*}{*} & \tabularnewline
+\textsc{polview (}\textsl{liberal}\textsc{)} &  &  & .076{*}{*} & .066{*}{*} & .122{*}{*} & \tabularnewline
+\textsc{disability} &  &  & .028 & .037{*} & -.011 & .049{*}{*}\tabularnewline
+\textsc{internetfreq} &  &  &  & .062{*}{*} & .052{*} & \tabularnewline
+\textsc{attitude1} &  &  &  & .084{*}{*} & .104{*}{*} & \tabularnewline
+\textsc{attitude2} &  &  &  & .055{*}{*} & .037 & \tabularnewline
+\textsc{physicallabour} &  &  &  &  & -.009 & \tabularnewline
+\textsc{urban} &  &  &  &  &  & .030{*}\tabularnewline
+ &  &  &  &  &  & \tabularnewline
+\hline 
+\textbf{No. of observations} & 6010 & 4849 & 4468 & 3678 & 2556 & 6000\tabularnewline
+\textbf{R}\textsuperscript{\textbf{2}} & .055 & .112 & .119 & .123 & .126 & .056\tabularnewline
+\textbf{Adjusted R}\textsuperscript{\textbf{2}} & .054 & .111 & .117 & .120 & .121 & .055\tabularnewline
+\hline 
+\end{tabular}\bigskip{}
+\par\end{center}
+\begin{center}
+\caption{Multiple regression models on the likelihood of online dating.\label{tab:MRM-benchmark}}
+\blfootnote{{DV:  \textsc{isonlinedater}. We are reporting the standardised beta coefficients only.}}\blfootnote{{**Significant at 0.01 level.}}\blfootnote{{*Significant at 0.05 level.}}
+\par\end{center}%
+\end{minipage}
+\end{table}
+
+

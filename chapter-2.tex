@@ -1,0 +1,314 @@
+
+\lhead[\leftmark]{\leftmark}
+
+\rhead[\leftmark]{}
+
+\lfoot{}
+
+\cfoot{}
+
+\cfoot[\thepage]{\thepage}
+
+\chapter{Methods and Data}
+
+\section{Research Design and Data Set}
+
+In accordance with the above-mentioned insights, we elaborate some
+hypotheses on online dating users and usage to test in this study.
+As described in section \ref{sec:A-Solution-to}, the increased search
+efficiency is especially convenient to those people who lack an easy
+access to a partner market \citep[e.g.,][]{Stevenson2007Marriage-and-Di},
+thus a first hypothesis can be outlined.
+\begin{labeling}{000.000.0000000}
+\item [{\textsl{Hypothesis\ 1}:}] Online daters are more likely to be
+in a thin market for partners or in a minority group (e.g., race,
+sexual orientation, religion, disability, etc.).
+\end{labeling}
+On the other hand, we investigate the online dating platforms penetration
+among all social strata and the upper ones in particular. In fact,
+such demographic groups (young adults, graduates and those from high-income
+households) are those who use the Internet the most\footnote{As reported in the Internet/Broadband Fact Sheet by Pew Research Center
+(2018).}. Thus, consistent with prior research \citep[e.g.,][]{Cacioppo2013Marital-satisfa},
+we expect the following traits to be confirmed:
+\begin{labeling}{000.000.0000000}
+\item [{\textsl{Hypothesis\ 2}:}] Young, white males, who are not already
+married nor with children, with a higher socioeconomic status and
+liberal views are those who use online dating more often.
+\end{labeling}
+Because official data from online dating private companies is not
+made publicly available, all analyses in this thesis are based on
+secondary data from Pew Research Center\textquoteright s Internet,
+Science \& Technology Project \textquotedblleft Spring Tracking\textquotedblright{}
+Survey of 2015. Among the many topics covered \textendash{} such as
+gaming, home broadband and smartphone usage \textendash{} online dating
+questions were also included.
+
+The survey was conducted between June and July 2015 and provides a
+national sample of 2,001 adults (18 years of age or older) living
+in the United States. 701 of these respondents have been interviewed
+on a landline telephone, while the remaining 1,300 were interviewed
+on a cellphone, all via random digit dialing. Therefore, respondents
+in the landline sample have been randomly picked by asking for the
+youngest adult who was at home at the moment of calling. Conversely,
+those in the cellphone sample were personally interviewed when they
+answered the phone, if they were at least 18 years old. With this
+method, fraudulent or deceptive responding is minimised: for instance,
+no multiple surveys could be completed from the same respondent, nor
+they could complete it too quickly to reflect valid data (i.e., random
+responses).
+
+Data collection processes were conducted with strict methodology,
+and the final data set has been provided with full documentation.
+As a result of the rigorous techniques put in place, the data set
+is considered to be fully representative of all residents in each
+U.S. state. In order to correct for the stratification sampling design
+at the state level and to overcome over-sampling problems due to different
+population densities and other known biases (on parameters such as
+age, race, gender, etc.), we conduct all analyses weighting data accordingly.
+Moreover, the weights take into account that people in large households
+and that people with both a landline and a cellphone have respectively
+lower and higher chances of being selected. All analyses and computations
+are processed with IBM SPSS software. 
+
+As we wish to test the aforementioned hypotheses by measuring the
+partial (ceteris paribus) effects of each independent variable on
+the variation in the usage of online dating, we run a Multiple Regression
+Model (MRM) along with some preliminary descriptive statistics analyses.
+We develop different models to explain the online dating usage frequency,
+progressively adding up variables to reach our final and complete
+model (see \prettyref{tab:MRM-benchmark}). All analyses are conducted
+on the same observations and with the same dependent variable, that
+is thoroughly discussed in the following section.
+
+\section{Online Dating Usage: Dependent Variable}
+
+We want to investigate the impact of different independent variables
+on the actual usage of online dating platforms. Respondents were asked
+two questions that particularly fit our needs: \textsc{date1a} (\textquotedblleft Have
+YOU, personally, ever used an online dating site such as Match.com,
+eHarmony, or OK Cupid?\textquotedblright ), that has been asked to
+all Internet users (\textsc{eminuse}\footnote{\textsc{eminuse} (asked all): \textquotedblleft Do you use the internet
+or email, at least occasionally?\textquotedblright{} }=1 or \textsc{intmob}\footnote{\textsc{intmob} (asked all): \textquotedblleft Do you access the internet
+on a cell phone, tablet or other mobile handheld device, at least
+occasionally?\textquotedblright{}}=1), and \textsc{date2a} (\textquotedblleft Have you ever used a dating
+app on your cell phone?\textquotedblright ), that has been asked to
+every smartphone owner (\textsc{smart1}\footnote{\textsc{smart1} (asked if have a cell phone): \textquotedblleft Some
+cell phones are \textquoteleft smartphones\textquoteright{} because
+of certain features they have. Is your cell phone a smartphone such
+as an iPhone, Android, Blackberry or Windows phone, or are you not
+sure?\textquotedblright{}}=1). Both variables can take either value 1 (\textquotedblleft Yes\textquotedblright ),
+2 (\textquotedblleft No\textquotedblright ), 8 (\textquotedblleft Don't
+know\textquotedblright ) or 9 (\textquotedblleft Refused\textquotedblright ).
+As explained later, they have been jointly used to create a new dummy
+(\textsc{isonlinedater}) that is included in the MRM as the dependent
+variable. 
+
+As we would expect, they both showed high percentages of missing values:
+13.4\% for \textsc{date1a} and 32.4\% for\textsc{ date2a} (see Table
+\ref{tab:Univariate-Statistics-dependent} and \ref{tab:Missing-Value-Analysis};
+Figures \ref{fig:date1a:-frequency-bar} and \ref{fig:date2a:-frequency-bar}).
+However, in the light of the fact that there is no commonly accepted
+way to handle missing data, and that a generally high percentage of
+them can be found in social science research papers, we decided to
+proceed by keeping all cases in further analyses. To clarify, we could
+have adopted other solutions: for instance, we could have omitted
+all cases with missing values for both \textsc{date1a} and \textsc{date2a}
+(listwise deletion) \textendash{} and thus keeping those cases that
+reported a 1 (\textquotedblleft Yes\textquotedblright ) in at least
+one of these variables\footnote{I.e., meaning that the respondent had used an online dating site at
+least once but never a smartphone dating app (or vice versa), hence
+he or she should be considered as an \textquotedblleft online dater\textquotedblright{}
+anyway.} \textendash{} which should be considered as \textquotedblleft online
+daters\textquotedblright{} anyway; filtering out all respondents who
+reported not to use the Internet at least occasionally (\textsc{eminuse}$\neq$1)
+could have also been a quick and similar fix. However, none of these
+proved to be sound choices. In fact, we want to take into account
+in our analysis also people who do not frequently use the Internet
+(namely the elderly). We suspect that the great majority of missing
+values is not due to an error, but rather to the fact that these questions
+have been asked only to a restricted pool of respondents: those who
+had disclosed that they use the Internet or own a smartphone. In fact,
+the Little's MCAR Test is significant at 1\%, thus we reject the null
+hypothesis that values are missing completely at random (see Table
+\ref{tab:Missing-Value-Analysis}). That said, we do not exclude the
+occurrence of any other potential issue a priori, in fact some improbable
+values have also been observed, but their frequency seems negligible
+(see Table \ref{tab:Crosstabs:-date1a-and}). Since no other issues
+are noticeable, we proceed by describing the actual dependent variable
+of our model.
+
+In order to run a regression on the usage of online dating, we computed
+a new dummy variable \textsc{isonlinedater} that takes value 1 if
+either \textsc{date1a} or \textsc{date2a} is true, 0 otherwise. In
+this manner, we are considering all missing values from \textsc{date1a}
+and \textsc{date2a} as if they were coded a 2 (\textquotedblleft No\textquotedblright )\footnote{This provides a conservative estimate since we are not taking into
+account potential respondents who lied by not declaring their actual
+usage of online dating.}. Thus, from here on, we define as \textquotedblleft online dater\textquotedblright{}
+anyone who has used a dating site or a mobile dating app at least
+once. As a result, 15.5\%\footnote{Notice that this slightly higher percentage of 1 (\textquotedblleft Yes\textquotedblright )
+in \textsc{isonlinedater}, compared to \textsc{date1a} and \textsc{date2a},
+is due to the fact that some respondents who reported a 2 (\textquotedblleft No\textquotedblright )
+in one of these variables are being considered anyway \textquotedblleft online
+daters\textquotedblright , if they reported a 1 (\textquotedblleft Yes\textquotedblright )
+in the other one. } of respondents is defined as \textquotedblleft online dater\textquotedblright{}
+(see Table \ref{tab:isonlinedater:-frequency-table.} and Figure \ref{fig:isonlinedater:-frequency-bar}).
+It follows that \textsc{isonlinedater} has been employed as the outcome
+variable in our final regression model. Table \ref{tab:Univariate-Statistics-dependent}
+collects some statistics for the variables in question.
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{centering}
+\begin{tabular}{lllccc}
+\hline 
+ &  &  & \textsc{date1a} & \textsc{date2a} & \textsc{isonlinedater}\tabularnewline
+\hline 
+\hline 
+\textbf{N} & \textbf{Valid} &  & 5428  & 4236 & 6267\tabularnewline
+ & \textbf{Missing} &  & 839 & 2032 & 0\tabularnewline
+\textbf{Mean} &  &  & 1.87 & 1.89 & .1549\tabularnewline
+\textbf{Median} &  &  & 2.00 & 2.00 & .0000\tabularnewline
+\textbf{Std. Deviation} &  &  & .442 & .445 & .36181\tabularnewline
+\textbf{Skewness} &  &  & 4.643 & 4.982 & 1.908\tabularnewline
+\multicolumn{2}{l}{\textbf{Std. Error of Skewness}} &  & .033 & .038 & .031\tabularnewline
+\textbf{Kurtosis} &  &  & 88.310 & 81.147 & 1.642\tabularnewline
+\multicolumn{2}{l}{\textbf{Std. Error of Kurtosis}} &  & .066 & .075 & .062\tabularnewline
+\textbf{Minimum} &  &  & 1 & 1 & .00\tabularnewline
+\textbf{Maximum} &  &  & 9 & 8 & 1.00\tabularnewline
+\hline 
+\end{tabular}\bigskip{}
+\par\end{centering}
+\begin{centering}
+\caption{Univariate Statistics for the dependent variables.\label{tab:Univariate-Statistics-dependent} }
+\par\end{centering}
+\end{table}
+
+\section{Independent Variables}
+
+Unless otherwise noted, all the covariates have been recoded to provide
+better interpretable results. The following input variables have been
+standardised for consistency reasons, and only pertinent answers have
+been included in our analyses. In other words, common entries such
+as 98 (\textquotedblleft Don\textquoteright t know\textquotedblright )
+or 99 (\textquotedblleft No answer\textquotedblright ) have been recoded
+as system-missing values.
+
+As regards the controlling variables, we included some basic regressors
+in accordance to preexisting literature. \textsc{gender} is a dummy
+variable that takes value 0 if male, 1 if female. \textsc{university}
+and \textsc{minrace} also follow the same logic: they take value 1
+in case the respondent \textendash{} respectively \textendash{} graduated
+at least at a Bachelor level and is from a racial minority (i.e.,
+is not White), 0 otherwise. Since most of the covariates are categorical,
+nominal or ordinal variables (\textsc{age} is the only numerical variable
+included in our model), new dummies have been coded for them, following
+the general principle of assigning a 1 for the presence of a level,
+and a 0 for its absence. Some anchored scales are also present. \textsc{internetfreq}\footnote{\textsc{internetfreq} is the inverted anchor scale of the original
+variable \textsc{intfreq}, that has been recoded for more easily interpretable
+results.} (\textquotedblleft About how often do you use the internet?\textquotedblright )
+and \textsc{polview} (\textquotedblleft In general, would you describe
+your political views as...\textquotedblright ) are both 5-point scales
+that range from, respectively, \textquotedblleft Less often\textquotedblright{}
+to \textquotedblleft Almost constantly\textquotedblright{} and from
+\textquotedblleft Very conservative\textquotedblright{} to \textquotedblleft Very
+liberal\textquotedblright . Because we did not want to lose the information
+in their ordering, we opted for treating them as numeric. However,
+this was not possible for the original variable \textsc{inc} (\textquotedblleft Last
+year - that is in 2014 - what was your total family income from all
+sources, before taxes?\textquotedblright ), which is also an anchored
+scale, but it ranges from 1 (\textquotedblleft Less than \$10,000\textquotedblright )
+to 9 (\textquotedblleft \$150,000 or more\textquotedblright ) with
+different numerical distance between each category. Thus, we introduced
+new dummies, \textsc{income1}, \textsc{income2} and \textsc{income3},
+that split respondents into three different income categories, from
+the lowest to the highest. 
+
+Table \ref{tab:Description-of-variables-selected} provides a full
+list of selected variables included in the final regression model.
+Since all these variables directly refer to respondent\textquoteright s
+individual traits and preferences, and interpretation seems straightforward,
+we do not deepen further into them.\clearpage{}\pagestyle{plain}
+\begin{sidewaystable}
+\centering{}%
+\begin{minipage}[t]{1\columnwidth}%
+\begin{center}
+\renewcommand{\arraystretch}{1.2}%
+\begin{tabular}{lll}
+\hline 
+\textbf{Label} & \textbf{Description or original question} & \textbf{Values admitted (recoded)}\tabularnewline
+\hline 
+\hline 
+\textsc{\small{}isonlinedater} & {\small{}Have you used a dating site or a mobile dating app at least
+once?} & {\small{}0=No; 1=Yes.}\tabularnewline
+\textsc{\small{}gender} & {\small{}Respondent's sex.} & {\small{}0=Male; 1=Female.}\tabularnewline
+\textsc{\small{}age} & {\small{}What is your age? } & \textsl{\small{}numeric}\tabularnewline
+\textsc{\small{}university} & {\small{}Is true if respondent graduated at least at a Bachelor level.} & {\small{}0=No university degree; 1=Yes.}\tabularnewline
+\textsc{\small{}minrace} & {\small{}Is true if respondent is from a racial minority (not White).} & {\small{}0=White; 1=Else.}\tabularnewline
+\multirow{1}{*}{\textsc{\small{}income1}} & {\small{}Was your family income last year from less than \$10,000
+to under \$30,000?} & \multirow{1}{*}{{\small{}0=No; 1=Yes.}}\tabularnewline
+\multirow{1}{*}{\textsc{\small{}income2}} & {\small{}Was your family income last year from \$30,000 to under \$75,000?} & \multirow{1}{*}{{\small{}0=No; 1=Yes.}}\tabularnewline
+\textsc{\small{}income3} & {\small{}Was your family income last year \$75,000 or more?} & {\small{}0=No; 1=Yes.}\tabularnewline
+\multirow{2}{*}{\textsc{\small{}married}} & \multirow{2}{*}{{\small{}Are you currently married or living with a partner?}} & {\small{}0=Never been married;}\tabularnewline
+ &  & {\small{}1=Married/living with a partner.}\tabularnewline
+\textsc{\small{}isparent} & {\small{}Are you parent of any children under 18?} & {\small{}0=No; 1=Yes.}\tabularnewline
+\multirow{2}{*}{\textsc{\small{}polview}} & \multirow{2}{*}{{\small{}Would you describe your political view as...}} & {\small{}1=Very conservative; 2=Conservative;}\tabularnewline
+ &  & {\small{}3=Moderate; 4=Liberal; 5=Very liberal.}\tabularnewline
+\textsc{\small{}urban} & {\small{}Community type is urban or suburban.} & {\small{}0=Rural; 1=Urban/Suburban}\tabularnewline
+\textsc{\small{}physicallabour} & {\small{}Respondent's job involves manual labour.} & {\small{}0=No; 1=Yes.}\tabularnewline
+\textsc{\small{}disability} & {\small{}Respondent has any handicap or disability.} & {\small{}0=No; 1=Yes.}\tabularnewline
+\multirow{3}{*}{\textsc{\small{}internetfreq}} & \multirow{3}{*}{{\small{}How often do you use the Internet?}} & {\small{}1=Less often; 2=Several times a week;}\tabularnewline
+ &  & {\small{}3=About once a day; 4= Several times}\tabularnewline
+ &  & {\small{}a day; 5=Almost constantly.}\tabularnewline
+\textsc{\small{}attitude1} & {\small{}Online dating is a good way to meet people.} & {\small{}0=Disagree; 1=Agree.}\tabularnewline
+\textsc{\small{}attitude2} & {\small{}Online dating is easier and efficient.} & {\small{}0=Disagree; 1=Agree.}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+\begin{center}
+\caption{Description of variables selected in the final model.\label{tab:Description-of-variables-selected}}
+\par\end{center}%
+\end{minipage}
+\end{sidewaystable}
+\clearpage{}\pagestyle{fancy}
+
+\section{Model Construction}
+
+Among all the variables provided in the data set, we decided to include
+only those ones that best could influence individual adoption or usage
+of online dating in our opinion. The first model is a very basic one,
+with only some controlling variables (socio-demographic) included:
+\textsc{gender}, \textsc{age}, \textsc{university}, \textsc{minrace},
+\textsc{income2} and \textsc{income3}. To avoid the dummy variable
+trap, we kept \textsc{income1} out from our models as a reference
+category. Our second model, takes into account also some attributes
+of the life course, like marital history or dependent children (underage).
+The third model builds upon the first ones and considers political
+ideologies and potential handicaps as well. It includes \textsc{polview}
+and \textsc{disability}. The final\footnote{Actually, a further model with \textsc{physicallabour} is also presented.
+The rationale for including it is to assess to what extent having
+a manual or physical intensive job position affects the outcome variable
+in question. However, as it is explained later, it lacks of significance
+despite a higher $R^{2}$, thus we discourage considering this model
+as the definitive one. } and most comprehensive model includes these previous variables, along
+with other key ones to account for individual attitudes and preferences
+toward the Internet and technology in general. Thus it turned out
+to be based upon the following regressors:
+\begin{multline}
+Y=\beta_{0}+\beta_{1}\cdot\mathtt{\mathsf{\mathit{GENDER}}}+\beta_{2}\cdot AGE+\beta_{3}\cdot UNIVERSITY+\beta_{4}\cdot MINRACE\\
++\beta_{5}\cdot INCOME2+\beta_{6}\cdot INCOME3+\beta_{7}\cdot MARRIED+\beta_{8}\cdot ISPARENT\\
++\beta_{9}\cdot POLVIEW+\beta_{10}\cdot DISABILITY+\beta_{11}\cdot INTERNETFREQ\\
++\beta_{12}\cdot ATTITUDE1+\beta_{13}\cdot ATTITUDE2+\varepsilon_{i}\qquad\hfill\label{eq:final-model}
+\end{multline}
+
+One simpler model has also been developed, specifically to test the
+thin market \textsl{hypothesis 1}. Notwithstanding that very few
+useful variables can be found in the data set for this purpose \textendash{}
+questions on religious beliefs and sexual orientation, for instance,
+could have definitely improved this model \textendash{} we included
+\textsc{disability} and \textsc{minrace}. We also decided to add \textsc{urban,
+}in order to assess whether living in a rural community might push
+inhabitants to resort to online dating for their mating purposes,
+since the low population density could be equated with being in a
+thin market for potential partners.
+
+

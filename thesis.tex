@@ -1,0 +1,208 @@
+\documentclass[12pt,oneside,english,british,intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn]{scrbook}
+\usepackage{lmodern}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=2.5cm,rmargin=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{3}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{array}
+\usepackage{prettyref}
+\usepackage{float}
+\usepackage{rotfloat}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[authoryear]{natbib}
+\doublespacing
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+\providecommand{\tabularnewline}{\\}
+
+\@ifundefined{lettrine}{\usepackage{lettrine}}{}
+
+\@ifundefined{date}{}{\date{}}
+
+\addtokomafont{disposition}{\rmfamily}
+\usepackage{setspace}
+% To change chapter font size
+\addtokomafont{chapter}{\fontsize{23}{17}\selectfont}
+% To enable bibliography
+\setcitestyle{authoryear,open={(},close={)}}
+% To create nodes and edges diagrams
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows,positioning}
+% To avoid footnote counting start from zero at each new chapter
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+% Lettrine
+\usepackage{lettrine}
+\renewcommand{\LettrineFontHook}{\color[gray]{0.5}}
+%\setcounter{DefaultLines}{3}
+
+% in case somebody wants to have the label "Equation"
+%\renewcommand{\eqref}[1]{Equation~(\negthinspace\autoref{#1})}
+
+% that links to image floats jumps to the beginning
+% of the float and not to its caption
+\usepackage[figure]{hypcap}
+
+% the pages of the TOC are numbered in roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% makes caption labels bold
+% for more info about these settings, see
+% http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf
+\setkomafont{captionlabel}{\bfseries}
+\setcapindent{1em}
+
+% enables calculations
+\usepackage{calc}
+
+% fancy page header/footer settings
+% for more information see section 9 of
+% http://www.ctan.org/tex-archive/macros/latex/contrib/fancyhdr/fancyhdr.pdf
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% increases the bottom float placement fraction
+\renewcommand{\bottomfraction}{0.5}
+\usepackage{setspace}
+
+% avoids that floats are placed above its sections
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+
+\makeatother
+
+\begin{document}
+\mbox{} \thispagestyle{empty} \newpage
+
+\begin{spacing}{1}
+
+\subject{}
+
+\title{An Empirical Investigation of\\
+Online Dating as a Marketplace}
+
+\subtitle{Final Paper}
+
+\author{Andrea Domenico Antonacci\\
+Student ID: 3004329}
+
+\date{Academic Year 2017/2018\vspace{60pt}
+\\
+Advisor: Professor Francesco Candeloro Billari}
+
+\publishers{%
+\begin{minipage}[t]{0.4\columnwidth}%
+%
+\end{minipage}\vspace{\baselineskip}\\
+Università Commerciale \textquotedblleft Luigi Bocconi\textquotedblright \\
+Bachelor of Science in International Economics and Management\vspace{-3cm}
+}
+
+\lowertitleback{\textbf{Bachelor Thesis of}\smallskip{}
+\\
+Andrea Domenico Antonacci\bigskip{}
+\\
+\textbf{Advisor}\smallskip{}
+\\
+Prof. Dr. Francesco Candeloro Billari\bigskip{}
+\\
+\textbf{Graduation Date}\smallskip{}
+\\
+10.10.2018}
+
+\dedication{To my unbelievably supportive parents.\\
+For their love and tireless efforts in life that inspire me everyday.}
+
+\maketitle
+\cleardoublepage{}
+
+\mbox{} \thispagestyle{empty} \newpage
+
+\lhead{\rightmark}
+
+\rhead[\leftmark]{}
+
+\lfoot{}
+
+\cfoot{}
+
+\rfoot{}
+
+\tableofcontents{}\end{spacing}
+
+\cleardoublepage{}
+
+\pagestyle{plain}
+
+\include{Summary}
+
+\cleardoublepage{}
+
+\pagestyle{fancy}
+
+\lhead[\chaptername~\thechapter]{\rightmark}
+
+\include{chapter-1}
+
+\include{chapter-2}
+
+\include{chapter-3}
+
+\include{chapter-4}
+
+\include{chapter-5}
+
+\cleardoublepage{}
+
+\lhead[]{Acknowledgments}
+
+\rhead[Acknowledgments]{}
+
+\include{Acknowledgments}
+
+
+\appendix
+\include{Appendix}
+
+\cleardoublepage{}
+
+\lhead[]{\rightmark}
+
+\rhead[\leftmark]{}
+
+\cfoot[\thepage]{\thepage}
+
+\rfoot{}
+
+\bibliographystyle{apa}
+\bibliography{thesis}
+
+
+\end{document}
